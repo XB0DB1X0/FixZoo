@@ -7,7 +7,7 @@ MODEL_PATH = 'my_checkpoint.weights.h5'
 IMG_SIZE = (224, 224)
 
 def build_model():
-    base = tf.keras.applications.EfficientNetB3(
+    base = tf.keras.applications.EfficientNetB0(
         input_shape=(224, 224, 3),
         include_top=False,
         weights='imagenet',
@@ -28,12 +28,12 @@ def get_model():
 
 @st.cache_resource
 def load_class_names() -> list[str]:
-    return [f'class_{i}' for i in range(5)]  # ปรับชื่อ class ตามจริงได้
+    return [f'class_{i}' for i in range(5)]
 
 CLASS_NAMES = load_class_names()
 model = get_model()
 
-st.set_page_config(page_title="Animal Classifier", page_icon="🐾")
+st.set_page_config(page_title="Animal Classifier", page_icon=None)
 st.title("Animal Classifier Demo")
 st.write("Upload an image of an animal and click Predict to classify it.")
 
