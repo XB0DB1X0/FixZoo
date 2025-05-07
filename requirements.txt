@@ -1,7 +1,4 @@
 streamlit
-Image
-numpy
 tensorflow
-Path
-h5py
-json
+numpy
+Pillow
